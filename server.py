@@ -11,12 +11,8 @@ def index():
 
 @app.route('/upload', methods=['POST'])
 def upload():
-    if 'image' not in request.files:
-        return "No image part", 400
-    file = request.files['image']
-    if file.filename == '':
-        return "No selected file", 400
-    file.save(os.path.join(UPLOAD_FOLDER, 'latest.jpg'))
+    with open(os.path.join(UPLOAD_FOLDER, 'latest.jpg'), 'wb') as f:
+        f.write(request.data)
     return 'OK'
 
 @app.route('/latest.jpg')
