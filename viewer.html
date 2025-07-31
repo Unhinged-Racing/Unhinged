@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>UNHINGED - Live View (v0.1)</title>
+  <style>
+    body { text-align: center; font-family: sans-serif; margin-top: 40px; }
+    img { max-width: 90%; border-radius: 10px; box-shadow: 0 0 10px #0004; }
+  </style>
+</head>
+<body>
+  <h2>Live Feed</h2>
+<img id="live" src="/latest.jpg">
+<script>
+setInterval(() => {
+    document.getElementById('live').src = '/latest.jpg?ts=' + new Date().getTime();
+}, 500); // refresh every 0.5 sec
+</script>
+</body>
+</html>
