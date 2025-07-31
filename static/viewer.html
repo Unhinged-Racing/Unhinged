@@ -9,11 +9,11 @@
 </head>
 <body>
   <h2>Live Feed</h2>
-  <img id="live" src="/latest.jpg">
-  <script>
-    setInterval(() => {
-      document.getElementById('live').src = '/latest.jpg?ts=' + Date.now();
-    }, 2000);
-  </script>
+<img id="live" src="/latest.jpg">
+<script>
+setInterval(() => {
+    document.getElementById('live').src = '/latest.jpg?ts=' + new Date().getTime();
+}, 500); // refresh every 0.5 sec
+</script>
 </body>
 </html>
